@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manjit’s Portfolio - Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header>
+    <div class="header-left">
+      <h1>Manjit</h1>
+      <span class="title">Web Developer</span>
+    </div>
+    <div class="header-right">
+      <a href="https://linkedin.com/in/manjit-30389778" target="_blank">LinkedIn</a>
+      <a href="https://github.com/ermanjit1991" target="_blank">GitHub</a>
+      <a href="files/SoftwareDeveloper_Manjit.pdf" download>Resume</a>
+      <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="project-title">Task Manager App</h2>
+    <p class="project-description">A modern, portfolio-ready task management app with priority, persistent storage, dark mode, and professional design.</p>
+
+    <div class="input-section">
+      <input type="text" id="taskInput" placeholder="Enter a new task...">
+      <select id="prioritySelect">
+        <option value="High">High</option>
+        <option value="Medium" selected>Medium</option>
+        <option value="Low">Low</option>
+      </select>
+      <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <div class="filters">
+      <button onclick="filterTasks('all')">All</button>
+      <button onclick="filterTasks('pending')">Pending</button>
+      <button onclick="filterTasks('completed')">Completed</button>
+      <button onclick="clearCompleted()">Clear Completed</button>
+      <select id="priorityFilter" onchange="filterByPriority()">
+        <option value="All">All Priorities</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+    </div>
+
+    <div class="task-counters">
+      <span id="totalCount">Total: 0</span> |
+      <span id="pendingCount">Pending: 0</span> |
+      <span id="completedCount">Completed: 0</span>
+    </div>
+
+    <ul id="pendingTasksList" class="task-section">
+      <h3>Pending Tasks</h3>
+    </ul>
+
+    <ul id="completedTasksList" class="task-section">
+      <h3>Completed Tasks</h3>
+    </ul>
+  </main>
+
+  <footer>
+    <p>© 2025 Manjit | Web Developer</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
